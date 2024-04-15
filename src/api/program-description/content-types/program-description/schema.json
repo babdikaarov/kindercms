@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "program_descriptions",
+  "info": {
+    "singularName": "program-description",
+    "pluralName": "program-descriptions",
+    "displayName": "program description"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    }
+  }
+}

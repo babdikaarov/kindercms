@@ -1,0 +1,37 @@
+export default {
+   config: {
+      autoOpen: false,
+      tutorials: false,
+      locales: [
+         // "ar",
+         // "fr",
+         // 'cs',
+         // "de",
+         // 'dk',
+         // 'es',
+         // 'he',
+         // 'id',
+         // 'it',
+         // 'ja',
+         // 'ko',
+         // 'ms',
+         // 'nl',
+         // 'no',
+         // 'pl',
+         // 'pt-BR',
+         // 'pt',
+         "ru",
+         // 'sk',
+         // 'sv',
+         // 'th',
+         // 'tr',
+         // 'uk',
+         // 'vi',
+         // 'zh-Hans',
+         "ky",
+      ],
+   },
+   bootstrap(app: any) {
+      console.log(app);
+   },
+};

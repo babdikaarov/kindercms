@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "langs",
+  "info": {
+    "singularName": "lang",
+    "pluralName": "langs",
+    "displayName": "lang",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ky": {
+      "type": "json"
+    },
+    "ru": {
+      "type": "json"
+    }
+  }
+}

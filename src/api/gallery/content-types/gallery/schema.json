@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "galleries",
+  "info": {
+    "singularName": "gallery",
+    "pluralName": "galleries",
+    "displayName": "gallery"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "album": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

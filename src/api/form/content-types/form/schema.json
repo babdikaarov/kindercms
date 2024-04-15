@@ -1,0 +1,33 @@
+{
+   "kind": "collectionType",
+   "collectionName": "forms",
+   "info": {
+      "singularName": "form",
+      "pluralName": "forms",
+      "displayName": "form",
+      "description": ""
+   },
+   "options": {
+      "draftAndPublish": false
+   },
+   "pluginOptions": {},
+   "attributes": {
+      "expired_at": {
+         "type": "date",
+         "required": true
+      },
+      "is_saved": {
+         "type": "boolean"
+      },
+      "inn": {
+         "type": "uid",
+         "required": true
+      },
+      "docs": {
+         "type": "media",
+         "multiple": true,
+         "required": true,
+         "allowedTypes": ["images", "files", "videos", "audios"]
+      }
+   }
+}
