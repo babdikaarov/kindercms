@@ -19,15 +19,12 @@ export default factories.createCoreController("api::calendar.calendar", ({ strap
             if (!response.ok) return null;
             const data = await response.json();
             const { items } = data as any;
-            // console.log(items[items.length - 1].attachments);
-
-            // items.forEach((el) => console.log(el));
 
             return items.map((e) => ({
                id: e.id,
                title: e.summary,
-               start: formatDate(e.start),
-               end: formatDate(e.end),
+               start: formatStartDate(e.start),
+               end: formatEndDate(e.end),
                calendarId: attributes.category,
                description: e.description ? e.description : "",
                location: e.attachments ? e.attachments[0].fileUrl : "",
@@ -41,16 +38,33 @@ export default factories.createCoreController("api::calendar.calendar", ({ strap
 
 type DateObject = { dateTime: string; timeZone: string } | { date: string };
 
-function formatDate(date: DateObject) {
+function formatStartDate(date: DateObject) {
    if ("dateTime" in date) {
-      const format = new Date(date.dateTime);
-      //   console.log(format)
-      const hours = format.getHours().toString().length === 1 ? `0${format.getHours()}` : format.getHours();
-      const min = format.getMinutes().toString().length === 1 ? `0${format.getMinutes()}` : format.getMinutes();
-      const formattedDate = `${format.getFullYear()}-${format.getMonth()}-${format.getDate()} ${hours}:${min}`;
-      //   console.log(format.getFullYear())
-      return formattedDate;
+      const dateString = date.dateTime;
+      return formatLongDate(dateString);
    } else {
       return date.date;
    }
+}
+function formatEndDate(date: DateObject) {
+   if ("dateTime" in date) {
+      const dateString = date.dateTime;
+      return formatLongDate(dateString);
+   } else {
+      const arr = date.date.split("-");
+      const day = (Number(arr.pop()) - 1).toString();
+      arr.push(day);
+      const format = arr.join("-");
+      return format;
+   }
+}
+
+function formatLongDate(dateString: string) {
+   const [datePart, timePart] = dateString.split("T");
+   const [year, month, day] = datePart.split("-");
+   const [hour, minute] = timePart.split(":");
+   console.log(year, month, day, hour, minute);
+
+   const formattedDate = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")} ${hour}:${minute}`;
+   return formattedDate;
 }

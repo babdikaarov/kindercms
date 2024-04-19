@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_default_reachtexts",
+  "info": {
+    "displayName": "reachtext"
+  },
+  "options": {},
+  "attributes": {
+    "teset": {
+      "type": "blocks"
+    }
+  }
+}
